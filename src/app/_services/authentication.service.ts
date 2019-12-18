@@ -1,19 +1,13 @@
 import { Injectable } from '@angular/core';
-<<<<<<< HEAD
-
-=======
 import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from "@angular/common/http";
 import {catchError, map} from "rxjs/operators";
 import {throwError} from "rxjs";
->>>>>>> develop
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
 
-<<<<<<< HEAD
-  constructor() { }
-=======
   constructor(private httpClient: HttpClient) {
   }
 
@@ -40,5 +34,4 @@ export class AuthenticationService {
       .post("http://localhost:4200/auth",{observe: 'response', params: body, headers: myheader})
       .subscribe((data) => {console.log(data);})
   }
->>>>>>> develop
 }
