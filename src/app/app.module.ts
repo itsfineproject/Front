@@ -2,10 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HTTP_INTERCEPTORS, HttpClientJsonpModule, HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from "./app-routing.module";
-<<<<<<< HEAD
-=======
-
->>>>>>> structure
 import { AppComponent } from './app.component';
 import { MainComponent } from './_components/main/main.component';
 import {MainComponent as AdminMainComponent} from "./_components/admin/main/main.component";
