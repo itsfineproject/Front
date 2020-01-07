@@ -7,7 +7,8 @@ import {throwError} from "rxjs";
   providedIn: 'root'
 })
 export class AuthenticationService {
-      constructor(private httpClient: HttpClient) {
+
+  constructor(private httpClient: HttpClient) {
   }
 
   private handleError(error: HttpErrorResponse) {

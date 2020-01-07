@@ -2,6 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HTTP_INTERCEPTORS, HttpClientJsonpModule, HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from "./app-routing.module";
+<<<<<<< HEAD
+=======
+
+>>>>>>> structure
 import { AppComponent } from './app.component';
 import { MainComponent } from './_components/main/main.component';
 import {MainComponent as AdminMainComponent} from "./_components/admin/main/main.component";
@@ -32,7 +36,6 @@ import { SettingsComponent } from './_components/ui/user-cabinet/content/setting
     AppComponent,
     MainComponent,
     AdminMainComponent,
-    AdminMainComponent,
     HeaderComponent,
     FooterComponent,
     ContentComponent,
@@ -55,15 +58,12 @@ import { SettingsComponent } from './_components/ui/user-cabinet/content/setting
     HttpClientModule,
     HttpClientJsonpModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
     BrowserAnimationsModule
   ],
   providers: [
     UserService,
     BackendData,
     BackendInterceptor,
-    AuthenticationService,
     AuthenticationService,
     {
       provide: HTTP_INTERCEPTORS,
