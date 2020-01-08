@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from "../../../_services/user.service";
-import {AuthenticationService} from "../../../_services/authentication.service";
+import {UserService} from "../../_services/user.service";
+import {AuthenticationService} from "../../_services/authentication.service";
 import {catchError} from "rxjs/operators";
 
 @Component({
