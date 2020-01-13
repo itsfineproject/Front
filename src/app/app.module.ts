@@ -25,6 +25,10 @@ import { CarsComponent } from './_components/user-cabinet/content/cars/cars.comp
 import { AddCarFormComponent } from './_components/user-cabinet/content/add-car-form/add-car-form.component';
 import { FinesComponent } from './_components/user-cabinet/content/fines/fines.component';
 import { SettingsComponent } from './_components/user-cabinet/content/settings/settings.component';
+import {MatCardModule} from '@angular/material/typings/card';
+import {MatFormFieldModule} from '@angular/material/typings/form-field';
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/typings/input';
 
 @NgModule({
   declarations: [
@@ -52,7 +56,11 @@ import { SettingsComponent } from './_components/user-cabinet/content/settings/s
     HttpClientModule,
     HttpClientJsonpModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
   providers: [
     UserService,
