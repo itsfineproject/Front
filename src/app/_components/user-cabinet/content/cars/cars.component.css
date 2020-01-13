@@ -1,0 +1,47 @@
+@media only screen and (max-width: 960px) {
+  .container{
+    width: 435px;
+  }
+}
+@media only screen and (min-width: 961px) {
+  .container{
+    width: 940px;
+  }
+  .material-icons{
+    margin-right: 80px;
+  }
+}
+@media only screen and (max-width: 440px) {
+  .container{
+    width: auto;
+  }
+}
+
+.elem{
+  display: inline-block;
+  margin: 1em;
+  cursor: pointer;
+}
+.displayed-block{
+  position: relative;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: right;
+}
+.row{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: right;
+  align-content: center;
+  position: relative;
+  right: 0;
+}
+.material-icons{
+  position: absolute;
+  right: 0;
+  color: green;
+  font-size: 3em;
+  cursor: pointer;
+}
