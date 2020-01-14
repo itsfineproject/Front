@@ -6,6 +6,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Patterns} from '../../../../_models/patterns';
 import {ErrorMatcher} from '../../../../_models/error-matcher';
 import {Observable, Subscription} from 'rxjs';
+import {BackendData} from '../../../../_helpers/backend-data';
 
 @Component({
   selector: 'app-add-car-form',
@@ -20,7 +21,8 @@ export class AddCarFormComponent implements OnInit {
 
   constructor(private carService: CarCarService,
               private route: ActivatedRoute,
-              private router: Router) { }
+              private router: Router,
+              private data: BackendData) { }
 
   ngOnInit() {
     this.newCarFG = new FormGroup({
@@ -41,20 +43,13 @@ export class AddCarFormComponent implements OnInit {
     // contactToSend.id = this.mode === 'add' ? 0 : this.contact.id;
     this.carService.postNewCar(this.newCar).subscribe((res) => {
       console.log(res);
-
-    });
-
-    this.correctSubscription = this.correctObservable
-      .subscribe((res) => {
-        console.log(res);
-        this.applicationService.getAll();
-        this.dataSubscription = this.dataService.dataSubject
-          .subscribe(() => {
-              this.router.navigate(['phonebook']);
-            },
-            (err) => console.log(err)
-          );
-      });
+      this.router.navigate([this.newCar.usedId, 'cars']);
+      },
+      (err) => {
+      console.log(err);
+      this.matcher = err;
+      }
+    );
   }
 
   exit() {

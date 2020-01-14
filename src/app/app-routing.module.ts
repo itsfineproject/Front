@@ -3,11 +3,17 @@ import {Routes, RouterModule} from '@angular/router';
 import {MainComponent} from './_components/main/main.component';
 import {MainComponent as AdminMainComponent} from './_components/admin/main.component';
 import {UserCabinetComponent} from './_components/user-cabinet/user-cabinet.component';
+import {CarsComponent} from './_components/user-cabinet/content/cars/cars.component';
+import {FinesComponent} from './_components/user-cabinet/content/fines/fines.component';
+import {AddCarFormComponent} from './_components/user-cabinet/content/add-car-form/add-car-form.component';
 
 const routes: Routes = [
   {path: '', component: MainComponent},
   {path: 'user-cabinet', component: UserCabinetComponent},
-  {path: 'admin', component: AdminMainComponent}
+  {path: ':id/cars', component: CarsComponent},
+  {path: 'car/:carNumber', component: FinesComponent},
+  {path: 'admin', component: AdminMainComponent},
+  {path: ':id/newCar', component: AddCarFormComponent}
 ];
 
 @NgModule({

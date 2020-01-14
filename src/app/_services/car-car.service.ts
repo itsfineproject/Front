@@ -31,7 +31,11 @@ export class CarCarService {
   }
 
   postNewCar(car: Car): Observable<Car> {
+    // for local use
+      this.data.cars.push(car);
+      // for remote use
       return this.http.post(URLs.urlAddCar, car) as Observable<Car>;
+
   }
 
 }

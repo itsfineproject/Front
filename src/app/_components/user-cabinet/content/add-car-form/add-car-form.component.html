@@ -3,7 +3,7 @@
   <mat-card class="centered papersheet">
     <mat-card-title>Contact Details</mat-card-title><br>
     <mat-card-content>
-      <form [formGroup]="тnewCarFG" >
+      <form [formGroup]="newCarFG" >
         <mat-form-field *ngFor="let field of fields">
           <mat-label>{{field}}</mat-label>
           <input value="{{newCar[field]}}"
@@ -12,7 +12,7 @@
                  placeholder="{{field}}"
                  [errorStateMatcher]="matcher"
           />
-          <mat-error *ngIf="!contactFG.controls[field].valid">That's not a valid data!</mat-error>
+          <mat-error *ngIf="!newCarFG.controls[field].valid">That's not a valid data!</mat-error>
         </mat-form-field>
 
         <mat-card-actions>
