@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router';
 import {MainComponent} from "./_components/main/main.component";
-import {MainComponent as AdminMainComponent} from "./_components/admin/main/main.component";
-import {UserCabinetComponent} from "./_components/ui/user-cabinet/user-cabinet.component";
+
+import {MainComponent as AdminMainComponent} from "./_components/admin/main.component";
+import {UserCabinetComponent} from "./_components/user-cabinet/user-cabinet.component";
+
 
 const routes: Routes = [
   { path: '', component: MainComponent},
