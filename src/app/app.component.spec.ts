@@ -26,6 +26,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('Front app is running!');
+    expect(compiled.querySelector('.home-page span').textContent).toContain('Front app is running!');
   });
 });
