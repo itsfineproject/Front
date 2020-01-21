@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import {
-  MatButtonModule,
+  MatButtonModule, MatCardModule,
   MatCheckboxModule,
   MatInputModule,
   MatPaginatorModule,
@@ -17,7 +17,8 @@ import {
     MatProgressSpinnerModule,
     MatSnackBarModule,
     MatSortModule,
-    MatTableModule
+    MatTableModule,
+    MatCardModule
   ]
 })
 export class MaterialDesignModule { }

@@ -9,6 +9,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 export class UserService {
 
   constructor(private httpClient: HttpClient) { }
+
   getUsers(): Observable<User[]> {
     return this.httpClient.get<User[]>("http://localhost:4200/users");
   }
