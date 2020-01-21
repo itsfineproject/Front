@@ -1,0 +1,4 @@
+npm install materialize-css@next
+npm install --save @angular/material 
+npm install --save @angular/cdk
+npm install --save @angular/animations

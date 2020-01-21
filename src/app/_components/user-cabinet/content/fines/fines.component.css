@@ -1,0 +1,14 @@
+.mat-column-id {
+  flex: 0 0 10em;
+}
+
+.accordeon{box-sizing: border-box; overflow: hidden; min-height: 0;
+  border: none;  background-color: #eeeeee; height: auto;}
+.expanded {height: auto;}
+mat-row {
+  cursor: pointer;
+}
+span.badge.new {
+  border-radius: 0.8em;
+}
+

@@ -1,19 +1,24 @@
 export class Car {
   id: number;
-  usedId: number;
+  userId: number;
   carNumber: string;
   carName: string;
+  carPassportNumber: string;
   comment: string;
 
   constructor(
-              usedId: number,
+              id: number,
+              userId: number,
               carNumber: string,
               carName: string,
+              carPassportNumber: string,
               comment: string) {
 
-    this.usedId = usedId;
+    this.id = id;
+    this.userId = userId;
     this.carNumber = carNumber;
     this.carName = carName;
+    this.carPassportNumber = carPassportNumber;
     this.comment = comment;
   }
 }

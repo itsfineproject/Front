@@ -1,41 +1,47 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Car} from '../_models/car';
-import {BackendData} from '../_helpers/backend-data';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {URLs} from '../_models/urls';
+import {filter, map} from 'rxjs/operators';
+
 @Injectable({
   providedIn: 'root'
 })
 export class CarCarService {
-  cars: Car[] = [];
 
-  constructor(private data: BackendData,
-              private http: HttpClient) {
+
+  constructor(private http: HttpClient) {
   }
 
   getCarsOfUser(userId) {
-    this.cars = [];
-    this.data.cars.forEach(car => {
-      if (car.usedId == userId) {
-        this.cars.push(car);
-      }
-    });
-
-    console.log(this.cars);
-    return this.cars;
+    return this.http.get(URLs.urlCarsGetByUser).pipe(
+    map((cars: Car[]) => {
+      console.log(cars);
+      const items = cars.filter(car => car.userId == userId);
+      return items;
+    }));
   }
 
-  getCarFields(){
-    return ['carNumber', 'carName', 'comment'];
-  }
+getCarFields() {
+  return [
+    {ind: 'carNumber',
+     name: 'Car Number',
+     err: 'Car number should be of type XX-XXX-XX or XXX-XX-XXX (only digits)'},
+       {ind: 'carName',
+        name: 'Car Name',
+        err: 'Car name shouldn`t be empty and must contain only letters, digits, spaces or "-"'},
+        {ind: 'carPassportNumber',
+        name: 'Car Passport Number',
+        err: 'Car passport number should contain only digits and "-"'},
+       {ind: 'comment',
+        name: 'Comment',
+        err: ''}
+    ];
+    }
 
-  postNewCar(car: Car): Observable<Car> {
-    // for local use
-      this.data.cars.push(car);
-      // for remote use
-      return this.http.post(URLs.urlAddCar, car) as Observable<Car>;
-
+  postNewCar(car: Car) {
+    return this.http.post(URLs.urlCarsAddNew, car).pipe(map(cars => console.log(cars)));
   }
 
 }

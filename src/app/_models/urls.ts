@@ -1,7 +1,11 @@
 export class URLs {
 
-  static urlBase = 'https://localhost:8080';
+  static urlBase = 'http://localhost:3500/';
 
-  static urlAddCar = URLs.urlBase + '/car';
+  static urlCarsGetByUser = URLs.urlBase + 'cars';
+  static urlCarsAddNew = URLs.urlBase + 'cars';
+  static urlFinesGetByCar = URLs.urlBase + 'fines';
+  static urlFinesSetPaid = URLs.urlBase + 'fines';
+  static urlParkings = URLs.urlBase + 'parkings';
 
 }

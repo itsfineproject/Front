@@ -1,0 +1,55 @@
+::ng-deep.mat-form-field-underline {
+  display: none;
+}
+.centered{position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%)}
+table{
+  border-collapse: collapse;
+}
+.papersheet {
+  padding: 2vh 2vw;
+  box-shadow: 0 0.5vh 1.5vh rgba(0,0,0,0.12),
+  0 0.5vh 1vh rgba(0,0,0,0.24);
+}
+textarea {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 6em;
+  border: 1px solid grey;
+  border-radius: 0.3em;
+}
+.mat-card-title{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: baseline;
+  font-family: Courier, monospace;
+  font-weight: bold;
+  text-shadow: 2px 2px lightgray;
+}
+.mat-form-field{
+  margin-top: 0.6em;
+  width: 100%;
+}
+.mat-card{
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+form{
+  width: 40vw;
+}
+.mat-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+button {
+  justify-content: center;
+  align-content: center;
+  margin: 0 0.5em 0.5em  0 ;
+}

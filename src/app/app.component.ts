@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {BackendInterceptor} from "./_helpers/backend-interceptor";
 
 @Component({
   selector: 'app-root',

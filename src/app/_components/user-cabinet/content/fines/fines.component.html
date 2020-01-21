@@ -1,1 +1,43 @@
-<p>fines works!</p>
+
+<mat-table [dataSource]="dataSource" matSort multiTemplateDataRows>
+
+  <ng-container matColumnDef="expand">
+    <mat-cell *matCellDef="let obj" [attr.colspan]="columns.length">
+      <div>
+        <p><b>Fine Id: </b> {{obj.id}}</p>
+        <p><b>Parking ID: </b>{{obj.parkingId}}</p>
+        <p><b>Parking Address: </b>{{obj.parkingAddress}}</p>
+        <p><b>Date: </b>{{obj.dateTime}}</p>
+        <p><b>Sum: </b>{{obj.sum}} NIS</p>
+        <p><b>Status: </b>{{obj.isPaid ? 'Paid' : 'Not Paid'}}</p>
+      </div>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container *ngFor="let field of columns" matColumnDef="{{field}}"  >
+    <mat-header-cell [style.margin-left]="'4em'" *matHeaderCellDef mat-sort-header>{{title[field]}}</mat-header-cell>
+    <mat-cell *matCellDef="let obj" [appIsId]="field" >{{obj[field]}}</mat-cell>
+  </ng-container >
+  <ng-container matColumnDef="isPaid">
+    <mat-header-cell *matHeaderCellDef mat-sort-header  [style.margin-left]="'4em'">Status</mat-header-cell>
+    <mat-cell *matCellDef="let obj"  >
+      <span *ngIf="!obj.isPaid" class="new badge red" data-badge-caption="NOT PAID" [style.margin-left]="'2.5em'"></span>
+      <span *ngIf="obj.isPaid" class="new badge green" data-badge-caption="PAID" [style.margin-left]="'3.3em'"></span>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"
+           (click)="expandedRow = row == expandedRow ? null : row "></mat-row>
+  <mat-row *matRowDef="let row; columns: ['expand']"
+           [@fullInfo] = "row == expandedRow ? 'open' : 'closed'" class="accordeon" ></mat-row>
+
+</mat-table>
+
+<mat-paginator #paginator [pageSize]="6"
+               [pageSizeOptions]="[6,12,24]"
+               [showFirstLastButtons]="true">
+</mat-paginator>
+
+
+

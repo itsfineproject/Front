@@ -20,15 +20,19 @@ import {BackendInterceptor} from './_helpers/backend-interceptor';
 import {UserService} from './_services/user.service';
 import {BackendData} from './_helpers/backend-data';
 import {AuthenticationService} from './_services/authentication.service';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CarsComponent} from './_components/user-cabinet/content/cars/cars.component';
 import {AddCarFormComponent} from './_components/user-cabinet/content/add-car-form/add-car-form.component';
 import {FinesComponent} from './_components/user-cabinet/content/fines/fines.component';
 import {SettingsComponent} from './_components/user-cabinet/content/settings/settings.component';
-import {MatCardModule} from '@angular/material/typings/card';
-import {MatFormFieldModule} from '@angular/material/typings/form-field';
+import {MatCardModule, MatTableModule} from '@angular/material';
+import {MatFormFieldModule} from '@angular/material';
 import {ReactiveFormsModule} from '@angular/forms';
-import {MatInputModule} from '@angular/material/typings/input';
+import {MatInputModule} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatPaginatorModule} from '@angular/material/typings/paginator';
+import {MaterialDesignModule} from './_modules/material-design.module';
+import { IsIdDirective } from './_components/user-cabinet/content/fines/is-id.directive';
+
 
 @NgModule({
   declarations: [
@@ -49,29 +53,29 @@ import {MatInputModule} from '@angular/material/typings/input';
     CarsComponent,
     AddCarFormComponent,
     FinesComponent,
-    SettingsComponent
+    SettingsComponent,
+    IsIdDirective,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     HttpClientJsonpModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    MatCardModule,
-    MatFormFieldModule,
     ReactiveFormsModule,
-    MatInputModule
+    BrowserAnimationsModule,
+    MaterialDesignModule,
+    MatCardModule
   ],
   providers: [
     UserService,
     BackendData,
     BackendInterceptor,
-    AuthenticationService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: BackendInterceptor,
-      multi: true
-    }
+    // AuthenticationService,
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: BackendInterceptor,
+    //   multi: true
+    // }
   ],
   bootstrap: [AppComponent]
 })

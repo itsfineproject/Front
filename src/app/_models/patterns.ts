@@ -7,4 +7,5 @@ export class Patterns {
   static namePattern =  Validators.pattern('^[a-zA-Z0-9 -]+$');
   static addressPattern =  Validators.pattern('^[a-zA-Z 0-9,;\\-//]+$');
   static carNumberPattern = Validators.pattern('^([0-9]{2}-[0-9]{3}-[0-9]{2})|([0-9]{3}-[0-9]{2}-[0-9]{3})$');
+  static passportNumberPattern = Validators.pattern('^[0-9-]{9,11}$');
 }
