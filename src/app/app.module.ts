@@ -7,7 +7,7 @@ import {BackendInterceptor} from './_helpers/backend-interceptor';
 import {UserService} from './_services/user.service';
 import {BackendData} from './_helpers/backend-data';
 import {AuthenticationService} from './_services/authentication.service';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialDesignModule} from './_modules/material-design.module';
 import {IsIdDirective} from './_components/user-cabinet/content/fines/is-id.directive';
@@ -33,6 +33,7 @@ import {AddAdminFormComponent} from './_components/admin/content/add-admin-form/
 import {CarsComponent} from './_components/user-cabinet/content/cars/cars.component';
 import {CarCarService} from './_services/car-car.service';
 import {CarFineService} from './_services/car-fine.service';
+import {MatIconModule, MatListModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -57,15 +58,18 @@ import {CarFineService} from './_services/car-fine.service';
     SettingsComponent,
     IsIdDirective,
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    HttpClientJsonpModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MaterialDesignModule
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        HttpClientJsonpModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        MaterialDesignModule,
+        MatIconModule,
+        MatListModule,
+        FormsModule
+    ],
   providers: [
     UserService,
     BackendData,

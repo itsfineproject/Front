@@ -1,0 +1,87 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle{
+  position: absolute;
+  left: 40vw;
+  top: 3vw;
+  width: 18vw;
+  min-width: 8em;
+  max-width: 13em;
+  height: 18vw;
+  min-height: 8em;
+  max-height: 13em;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 1px 1px 3px 1px lightgrey;
+}
+img{
+  overflow: hidden;
+}
+
+.container{
+  align-self: baseline;
+  width: 80%;
+margin: auto;
+}
+.card1{
+  /*margin-top: 15vh;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 2rem;
+}
+h4{
+  position: relative;
+  top: 5vh;
+  align-content: center;
+  margin-bottom: 7vh;
+}
+.field {
+  color: gray;
+  margin-right: 2em;
+  /*margin: 0 5em 1em 3em;*/
+}
+.fielddata{
+  margin: 0 3em 1rem 2em;
+  flex-basis: 16rem;
+}
+.data{
+  display: flex;
+  /*flex-direction: column;*/
+  flex-wrap: wrap;
+  /*justify-content: start;*/
+  /*align-items: start;*/
+  align-content: flex-start;
+}
+.circlesmall{
+  margin-left: 2em;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 0.9rem;
+  background-color: white;
+  box-shadow: 1px 1px 3px 1px lightgrey;
+}
+button{
+  padding: 0;
+  position: relative;
+  top: -0.2em;
+  left: -1.2em;
+}
+mat-icon{
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 0;
+  font-size: 1.3em;
+}
+.move{
+  background-color: #eeeeee;
+  height: 1.8rem;
+}
+corporate {
+  background-color: #e5fbd6;
+}

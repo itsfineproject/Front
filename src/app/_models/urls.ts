@@ -7,5 +7,6 @@ export class URLs {
   static urlFinesGetByCar = URLs.urlBase + 'fines';
   static urlFinesSetPaid = URLs.urlBase + 'fines';
   static urlParkings = URLs.urlBase + 'parkings';
+  static urlGetUsers = URLs.urlBase + 'users';
 
 }

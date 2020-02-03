@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from "../../_services/user.service";
-import {AuthenticationService} from "../../_services/authentication.service";
-import {catchError} from "rxjs/operators";
+import {UserService} from '../../_services/user.service';
+import {AuthenticationService} from '../../_services/authentication.service';
+
 
 @Component({
   selector: 'app-admin',
@@ -15,9 +15,9 @@ export class UserCabinetComponent implements OnInit {
   constructor(private userservise: UserService, private authService: AuthenticationService) { }
 
   ngOnInit() {
-    this.userservise.getUsers().subscribe(data => {console.log(data)});
+    // this.userservise.getUsers().subscribe(data => {console.log(data)});
 
-     this.authService.auth();
+    this.authService.auth();
   }
 
 }

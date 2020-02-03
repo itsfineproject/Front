@@ -1,1 +1,30 @@
-<p>settings works!</p>
+
+<div class="container centered" style="padding: 4em" [ngStyle]="corporate">
+  <div class="card1">
+<h4>Main Settings</h4>
+<br>
+    <br>
+    <br>
+<div class="data">
+  <div class="fielddata" *ngFor="let field of fields">
+    <div class="field" style="display: inline-block">{{fieldNames[field]}}:</div>
+    <div *ngIf="!editMode[field] && field != 'password'" style="display: inline-block">{{user[field]}}</div>
+    <div *ngIf="!editMode[field] && field == 'password'" style="display: inline-block">*********</div>
+    <div *ngIf="!editMode[field] && field != 'teudatZeut'" class="circlesmall" style="display: inline-block">
+      <button mat-button >
+        <mat-icon (click)="toEdit(field)">mode_edit</mat-icon>
+      </button>
+    </div>
+    <div *ngIf="!editMode[field] && field == 'teudatZeut'" class="move" style="display: inline-block"></div>
+    <input *ngIf="editMode[field]" style="display: inline-block" [(ngModel)]="user[field]" (focusout)="setNewData(field)">
+  </div>
+
+</div>
+  </div>
+</div>
+
+<p class="circle">
+  <img [src]="randomPhoto" width="110%"/>
+</p>
+
+

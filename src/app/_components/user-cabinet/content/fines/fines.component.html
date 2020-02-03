@@ -7,7 +7,7 @@
         <p><b>Fine Id: </b> {{obj.id}}</p>
         <p><b>Parking ID: </b>{{obj.parkingId}}</p>
         <p><b>Parking Address: </b>{{obj.parkingAddress}}</p>
-        <p><b>Date: </b>{{obj.dateTime}}</p>
+        <p><b>Date: </b>{{obj.dateTime | date:'medium'}}</p>
         <p><b>Sum: </b>{{obj.sum}} NIS</p>
         <p><b>Status: </b>{{obj.isPaid ? 'Paid' : 'Not Paid'}}</p>
       </div>
