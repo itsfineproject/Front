@@ -40,9 +40,8 @@ export class FinesComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnInit() {
     this.carId = this.route.snapshot.params['carId'];
-    this.dataSubscription = this.finesService.getFinesOfCar('1').subscribe((res) => {
-      this.dataSource.data = res;
-    });
+    this.finesService.getFinesWithoutAddress(this.carId).subscribe(res => this.dataSource.data = res)
+      .add(this.finesService.getAddresses(this.carId).subscribe(res => console.log(res)));
   }
 
   ngAfterViewInit(): void {

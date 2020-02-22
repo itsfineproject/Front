@@ -34,6 +34,13 @@ import {CarsComponent} from './_components/user-cabinet/content/cars/cars.compon
 import {CarCarService} from './_services/car-car.service';
 import {CarFineService} from './_services/car-fine.service';
 import {MatIconModule, MatListModule} from '@angular/material';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {environment} from '../environments/environment';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import { LeftMenuComponent } from './_components/main/left-menu/left-menu.component';
+import { ContactsComponent } from './_components/contacts/contacts.component';
+import {ClickStopPropagationDirective} from './_directives/click-stop-propagation.directive';
 
 @NgModule({
   declarations: [
@@ -57,6 +64,10 @@ import {MatIconModule, MatListModule} from '@angular/material';
     FinesComponent,
     SettingsComponent,
     IsIdDirective,
+    LeftMenuComponent,
+    ContactsComponent,
+    IsIdDirective,
+    ClickStopPropagationDirective,
   ],
     imports: [
         BrowserModule,
@@ -68,8 +79,11 @@ import {MatIconModule, MatListModule} from '@angular/material';
         MaterialDesignModule,
         MatIconModule,
         MatListModule,
-        FormsModule
-    ],
+        FormsModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFirestoreModule,
+        AngularFireAuthModule,
+            ],
   providers: [
     UserService,
     BackendData,

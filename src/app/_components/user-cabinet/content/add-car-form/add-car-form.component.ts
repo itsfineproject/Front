@@ -19,7 +19,7 @@ export class AddCarFormComponent implements OnInit, OnDestroy {
 
   newCarFG;
   newCar: Car = new Car(0, 0, '', '',  '', '');
-  fields = []
+  fields = [];
   matcher = new ErrorMatcher();
   subscription: Subscription;
 
@@ -49,15 +49,11 @@ export class AddCarFormComponent implements OnInit, OnDestroy {
     const carToSend = this.newCarFG.value;
     carToSend.userId = this.newCar.userId;
     console.log(carToSend);
-    this.subscription = this.carService.postNewCar(carToSend).subscribe((res) => {
-        console.log(res);
-        this.router.navigate([this.newCar.userId, 'cars']);
-      },
-      (err) => {
-        console.log(err);
-        this.matcher = err;
-      }
-    );
+    this.carService.postNewCar(carToSend);
+      // .subscribe((res) => {
+      //   console.log(res);
+    this.router.navigate([this.newCar.userId, 'cars']);
+
   }
 
   exit() {

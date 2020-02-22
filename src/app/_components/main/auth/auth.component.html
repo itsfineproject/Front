@@ -1,1 +1,32 @@
-<p>auth works!</p>
+<div class="container">
+<!--  appClickStopPropagation-->
+<!--  (click)="onClick()"-->
+<!--  style="width: 13px; height: 100%; position: absolute; right: 0%; background-color: darkolivegreen; cursor: pointer"-->
+<!--  [@logScreen]="state">-->
+<!--  <div>-->
+    <form class="box" [formGroup]="loginForm">
+<!--          (ngSubmit)="onSubmit()"-->
+      <mat-form-field>
+        <mat-label> Email </mat-label>
+        <input matInput
+               required type="email" name="email" placeholder="Username">
+      </mat-form-field>
+<mat-form-field>
+  <mat-label> Password </mat-label>
+  <input matInput
+         required type="password" name="" placeholder="Password">
+  <mat-hint>more than 5 characters</mat-hint>
+</mat-form-field>
+
+      <div class="buttons">
+        <input class="button" type="button" name="" value="Clear">
+        <input class="button" type="submit" name="" value="Submit">
+      </div>
+<!--      <div>-->
+<!--        <p class="signup">Don't have an account yet?</p>-->
+<!--        <input class="button" type="signUp" name="" value="Register">-->
+<!--      </div>-->
+    </form>
+<!--  </div>-->
+<!--</div>-->
+</div>

@@ -4,24 +4,50 @@ import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {URLs} from '../_models/urls';
 import {filter, map} from 'rxjs/operators';
+import {AngularFirestore} from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarCarService {
-
-
-  constructor(private http: HttpClient) {
-  }
+  numberOfCars = 10;
+ constructor(private db: AngularFirestore) {
+ }
 
   getCarsOfUser(userId) {
-    return this.http.get(URLs.urlCarsGetByUser).pipe(
+    return this.db.collection('cars').valueChanges().pipe(
     map((cars: Car[]) => {
-      console.log(cars);
+      this.numberOfCars = cars.length;
       const items = cars.filter(car => car.userId == userId);
       return items;
     }));
   }
+
+  postNewCar(carToSend) {
+   return this.db.collection('cars')
+    .add({...new Car((++this.numberOfCars), carToSend.userId, carToSend.carNumber, carToSend.carName, carToSend.carPassportNumber, carToSend.comment)})
+     .then(smth => {
+       console.log(this.numberOfCars);
+      this.db.collection('cars').doc(smth.id).update({id: this.numberOfCars});})
+  }
+//for Json-Server
+
+//   constructor(private http: HttpClient) {
+//   }
+//
+//   getCarsOfUser(userId) {
+//     return this.http.get(URLs.urlCarsGetByUser).pipe(
+//     map((cars: Car[]) => {
+//       console.log(cars);
+//       const items = cars.filter(car => car.userId == userId);
+//       return items;
+//     }));
+//   }
+//
+  //
+//   postNewCar(car: Car) {
+//     return this.http.post(URLs.urlCarsAddNew, car).pipe(map(cars => console.log(cars)));
+//   }
 
 getCarFields() {
   return [
@@ -40,8 +66,5 @@ getCarFields() {
     ];
     }
 
-  postNewCar(car: Car) {
-    return this.http.post(URLs.urlCarsAddNew, car).pipe(map(cars => console.log(cars)));
-  }
 
 }

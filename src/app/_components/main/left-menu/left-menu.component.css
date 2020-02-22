@@ -1,0 +1,22 @@
+.container{
+  background-color: #f7f7f7;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0.5vh 0.5em rgba(0, 0, 0, 0.5)
+  /*0 1.5vh 2vh rgba(0, 0, 0, 0.59);*/
+
+}
+.button{
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #49661c;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5vw;  width: 80%;
+  height: 10%;
+  text-align: center;
+  margin: 1vh 0 0 1vw;
+  box-shadow: 0 0.5vh 0.5vh rgba(0, 0, 0, 0.5),
+  0 1.5vh 2vh rgba(0, 0, 0, 0.59);
+  cursor: pointer;
+}

@@ -39,11 +39,12 @@ export class SettingsComponent implements OnInit {
   ngOnInit() {
     this.user.id = this.route.snapshot.params['id'];
     console.log(this.user.id);
-    this.subscription = this.userService.getUser(this.user.id).subscribe(users => {
+    this.subscription = this.userService.getUser(this.user.id)
+      .subscribe(users => {
       console.log(users);
       this.user = users[0];
     });
-    // console.log(this.user);
+    console.log(this.user);
     this.randomPhoto = 'https://randomuser.me/api/portraits/men/' + this.randomnumber + '.jpg';
   }
 

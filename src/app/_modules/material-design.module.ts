@@ -5,7 +5,9 @@ import {
   MatInputModule,
   MatPaginatorModule,
   MatProgressSpinnerModule,
-  MatSnackBarModule, MatSortModule, MatTableModule
+  MatSnackBarModule, MatSortModule, MatTableModule,
+  MatToolbarModule,
+  MatButtonToggleModule
 } from '@angular/material';
 
 @NgModule({
@@ -18,7 +20,9 @@ import {
     MatSnackBarModule,
     MatSortModule,
     MatTableModule,
-    MatCardModule
+    MatCardModule,
+    MatToolbarModule,
+    MatButtonToggleModule
   ]
 })
 export class MaterialDesignModule { }

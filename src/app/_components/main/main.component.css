@@ -1,0 +1,31 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 15vw auto 15vw;
+  grid-template-rows: 8vh auto 8vh;
+  /*grid-gap: 1vh 1vw;*/
+}
+.header{
+  grid-area: 1/2/2/4;
+}
+.leftbar{
+  grid-area: 1/1/3/2;
+}
+/*.mainpage{*/
+/*  grid-area: 2/2/3/3;*/
+/*  display: grid;*/
+/*  grid-template-columns: auto 15vw;*/
+/*  grid-template-rows: auto;*/
+/*  width: 80%;*/
+/*  height: 80%;*/
+/*}*/
+.homepage{
+  /*grid-area: 1/1/2/2;*/
+  grid-area: 2/2/3/3;
+}
+.regbar{
+  /*grid-area: 1/2/2/3;*/
+  grid-area: 2/3/3/4;
+}
+.footer{
+  grid-area: 3/1/4/3;
+}

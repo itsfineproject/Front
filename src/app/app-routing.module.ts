@@ -11,7 +11,8 @@ import {SettingsComponent} from './_components/user-cabinet/content/settings/set
 
 const routes: Routes = [
   {path: '', component: MainComponent},
-  {path: 'user-cabinet', component: UserCabinetComponent},
+  {path: 'home', component: MainComponent},
+  // {path: 'user-cabinet', component: UserCabinetComponent},
   {path: ':id/cars', component: CarsComponent},
   {path: 'car/:carNumber', component: FinesComponent},
   {path: 'admin', component: AdminMainComponent},
